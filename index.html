@@ -25,7 +25,72 @@
 				<p>Pengujian bilangan prima pada kriptografi</a></p>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
-<p>Lorem ipsum</p>
+<p>
+Bicara mengenai kriptografi, tentu tidak lepas dengan pembahasan tentang bilangan prima. Dalam kriptografi, bilangan prima berperan penting dalam proses enkripsi dan dekripsi. Salah satunya, yaitu dengan aplikasi mathematical lock atau fungsi satu arah pada public key. Fungsi satu-arah ini tidak seperti fungsi yang sudah kita kenal pada umumnya. Fungsi satu arah memiliki karakter yang unik, yaitu mudah dalam penerapannya, namun sulit dalam merekayasa ulang. Oleh sebab itu, pada algoritma enkripsi dan dekripsi biasanya mengimplementasikan elemen fungsi satu-arah di dalamnya untuk menghindari intervensi pihak ketiga.
+</p>
+
+<p>
+contoh, tinjaulah dua bilangan prima berikut yang merepresentasikan suatu private key
+</p>
+
+<p>
+17 dan 23
+</p>
+
+<p>
+Kemudian, kalikan kedua bilangan tersebut. Maka dengan mudah kita dapat menghitung hasilnya, yakni 391. Akan tetapi cobalah lakukan hal sebaliknya, dalam konteks ini mencari faktorisasi dari bilangan tersebut. Persoalan yang sebelumnya mudah, dapat menjadi sulit apabila dilakukan proses yang sebaliknya.
+</p>
+<img src="img/img1.png">
+<p>
+Meskipun sebenarnya persoalan tersebut pun masih dapat diselesaikan dalam waktu yang wajar, namun apa yang terjadi apabila bilangan prima diganti menjadi lebih besar, misal 4093082899 atau 10000500001. Tentu dibutuhkan metode untuk menentukan apakah suatu bilangan termasuk prima atau bukan.
+</p>
+
+<p>
+1.	Trial by division
+</p>
+
+<p>
+Cara yang paling naif adalah dengan mengecek satu persatu semua bilangan di bawah bilang prima P. Apakah bilangan tersebut dapat habis membagi P atau tidak. Apabila terdapat sebuah bialngan yang dapat habis membagi P, maka sudah dipastikan P bukan prima. Sebaliknya, maka bilangan P dapat dipastikan prima.
+</p>
+
+<p>
+Metode Trial by division ini menjamin kebenaran solusi, namun proses yang dibutuhkan memakan waktu yang sangat lama, terutama untuk bilangan prima yang besar. Akan tetapi, metode ini masih memiliki banyak ruang untuk modifikasi dalam hal pemangkasan waktu, misal pencarian ruang status dapat dikurangi sampai pada satu batas bilangan tertentu saja dimana setelah bilangan tersebut dapat dipastikan tidak mungkin ada bilangan yang habis membagi P.
+</p>
+
+<p>
+Batas bilangan tersebut dapat ditentukan dari akar kuadrat dari bilangan P,  sebab untuk setiap bilangan komposit n dapat tersusun atas 2 atau lebih bilangan prima
+n = P * P * …
+P terbesar yang mungkin adalah ketika n memiliki dua faktor dan faktor tersebut sama besar atau dengan kata lain n merupakan bilangan kuadratik.
+</p>
+
+<p>
+Contoh:
+Faktor prima dari 48 : 2 dan 3;
+Faktor prima dari 49 : 7;
+Faktor prima dari 50 : 2 dan 5;
+Faktor prima dari 51 : 3 dan 17;
+</p>
+
+
+<p>
+Faktor prima terkecil yang paling besar dari keempat bilangan bilangan berurutan di atas adalah 7 sehingga pengecekan cukup dilakukan sampai pada angka 7 saja.
+</p>
+
+
+<p>
+Modifikasi lainnya, yaitu dengan melewati pengecekan kelipatan dari bilangan sebelum P yang merupakan bilangan komposit. Hal ini dapat dilakukan dengan menerapkan Sieve of Eratothenes namun dengan prekondisi kebutuhan memori yang cukup banyak disebabkan perlunya pencatatan bilangan komposit yang harus dilewati pengecekannya.
+</p>
+<img src="img/img2.png">
+
+<p>
+2.	Teori bilangan
+</p>
+
+
+<p>
+Cara berikut ini diperoleh dengan menerapkan teorema Fermat. Perlu diketahui bahwa pada teknik pengecekan menggunakan Fermat tidak selalu menghasilkan bilangan prima sesungguhnya sebab teorema Fermat memungkinkan bilangan pseudo prima untuk dikategorikan sebagai bilangan prima. Akan tetapi, pengecekan dengan Fermat dapat meminimumkan secara signifikan jumlah kebutuhan komputasi pengecekan bilangan prima yang besar.
+</p>
+
 		<footer>
     		<ul>
 <!--
